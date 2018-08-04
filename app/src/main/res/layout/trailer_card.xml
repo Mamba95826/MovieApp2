@@ -25,7 +25,7 @@
                 android:layout_width="50dp"
                 android:layout_height="100dp"
                 android:gravity= "center"
-                android:src="drawable/youtube"
+                android:src="@drawable/youtube"
                 android:id="@+id/imageView"
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_alignParentTop="true"

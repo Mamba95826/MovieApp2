@@ -26,11 +26,11 @@ import java.util.List;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
 
-    private Context mcontext;
+    private Context mContext;
     private List<Movie> movieList;
 
-    public MoviesAdapter(Context mcontext, List<Movie> movieList) {
-        this.mcontext = mcontext;
+    public MoviesAdapter(Context mContext, List<Movie> movieList) {
+        this.mContext = mContext;
         this.movieList = movieList;
 
     }
@@ -49,7 +49,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
         String vote = Double.toString(movieList.get(i).getVoteAverage());
         viewHolder.userrating.setText(vote);
 
-        Glide.with(mcontext)
+        Glide.with(mContext)
                 .load(movieList.get(i).getPosterPath())
                 .into(viewHolder.thumbnail);
     }
@@ -75,14 +75,14 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
                     int pos = getAdapterPosition();
                     if (pos !=RecyclerView.NO_POSITION){
                         Movie clickedDataItem = movieList.get(pos);
-                        Intent intent = new Intent(mcontext, DetailActivity.class);
+                        Intent intent = new Intent(mContext, DetailActivity.class);
                         intent.putExtra("original_title", movieList.get(pos).getOriginalTitle());
                         intent.putExtra("poster_path", movieList.get(pos).getPosterPath());
                         intent.putExtra("overview", movieList.get(pos).getOverview());
                         intent.putExtra("vote_average", Double.toString(movieList.get(pos).getVoteAverage()));
                         intent.putExtra("release_date", movieList.get(pos).getReleaseDate());
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        mcontext.startActivity(intent);
+                        mContext.startActivity(intent);
                         Toast.makeText(v.getContext(), "You clicked" + clickedDataItem.getOriginalTitle(), Toast.LENGTH_SHORT).show();
                     }
 
