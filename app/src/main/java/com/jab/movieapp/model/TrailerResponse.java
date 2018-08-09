@@ -11,11 +11,11 @@ public class TrailerResponse {
     @SerializedName("results")
     private List<Trailer> results;
 
-    public int getId_trailer(){
+    public int getIdTrailer(){
         return id_trailer;
     }
 
-    public void setId_trailer(int id_trailer){
+    public void seIdTrailer(int id_trailer){
         this.id_trailer = id_trailer;
     }
 

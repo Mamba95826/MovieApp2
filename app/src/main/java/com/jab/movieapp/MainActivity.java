@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
-        recyclerView = findViewById(R.id.recycler_view);
+        setContentView(R.layout.activity_main);
+
 
 
         initViews();
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
         pd.setMessage("Fetching movies...");
         pd.setCancelable(false);
         pd.show();
-
+        recyclerView = findViewById(R.id.recycler_view);
 
 
         movieList = new ArrayList<>();

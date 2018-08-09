@@ -158,7 +158,7 @@ public class DetailActivity extends AppCompatActivity {
             }
             Client Client = new Client();
             Service apiService = Client.getClient().create(Service.class);
-            retrofit2.Call<TrailerResponse> call = apiService.getMovieTrailer(movie_id, BuildConfig.THE_MOVIE_DB_API_TOKEN);
+            retrofit2.Call<TrailerResponse> call = apiService.getMovieTrailer(299536, BuildConfig.THE_MOVIE_DB_API_TOKEN);
             call.enqueue(new Callback<TrailerResponse>() {
                 @Override
                 public void onResponse(retrofit2.Call<TrailerResponse> call, Response<TrailerResponse> response) {
